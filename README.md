@@ -1,16 +1,15 @@
 # Final-project Data Science Roles, Skills with Salaries 2025-
-> 🔬 A data-driven machine learning project that predicts diabetes subtypes using genetic, environmental and lifestyle factors.
+![](https://github.com/sripriya1999/Final-project-Data-Science-Job-Postings-with-Salaries-2025-/blob/main/Headerheader.jpg)
+> 🔬 A data-driven machine learning project that predicts Data Science Roles, Skills, and Salaries Analysis (2025)
 
 ---
 
 ## 🧩 Project Overview
-
-This project uses a comprehensive dataset encompassing multiple diabetes subtypes, including Steroid‑Induced Diabetes, Neonatal Diabetes Mellitus (NDM), Prediabetes, Type 1 Diabetes, and Wolfram Syndrome. The dataset includes medical, genetic, environmental, and lifestyle attributes to provide a holistic view of each patient’s profile. The aim is to help researchers and healthcare professionals understand how these factors interact and contribute to the development and progression of different diabetes subtypes, enabling insights for personalized treatment, risk assessment, and improved disease management.
-
+It includes job titles, work status (remote, hybrid, on-site), salaries, company size, headquarters location, industry type, and revenue.It also highlights the skills in demand (e.g., Python, SQL, Spark, AWS, machine learning) along with compensation ranges. To analyze job market trends, skill requirements, and salary benchmarks in the data science field, this dataset, which includes global data science job postings for 2025, includes detailed information about job roles, seniority levels, company profiles, industries, and required technical skills.
 ### 🎯 Objectives
-- Predict the diabetes subtype from patient health indicators.  
-- Identify key predictors of each subtype.  
-- Evaluate multiple models and select the best-performing classifier.  
+- Perform exploratory data analysis (EDA) on job listings to uncover trends in job titles, skills demand, work status, and compensation.Predict salary ranges based on job title, seniority, skills, and company features (Regression problem).
+
+- Classify job seniority level or work status based on job description and company data (Classification problem).
 
 ---
 
@@ -18,12 +17,12 @@ This project uses a comprehensive dataset encompassing multiple diabetes subtype
 1. Open the notebook:
 ### ▶️ Run Directly in Google Colab
 You can execute the entire workflow without any setup:
-🔗 [**Open Project in Colab**](https://colab.research.google.com/drive/1G_jjmFN5ur6ABKDNm6I8A5J6T5J658Eb?usp=sharing)
+🔗 [**Open Project in Colab**](https://colab.research.google.com/drive/197QbMz8pTZObr-Mf-sPzE_RkY_-onCi7?usp=sharing)
 #### Codes and Resources Used
 - **Editor Used:** Google Colab / Jupyter Notebook  
 - **Python Version:** 3.12  
 - **Platform:** Google Colab  
-- **Environment:** Machine Learning / Health Informatics  
+- **Environment:** Machine Learning / Salary Comparisoin &Analytics
 
 #### Python Packages Used
 - **General Purpose:** `os`, `warnings`, `joblib`, `requests`  
@@ -32,40 +31,26 @@ You can execute the entire workflow without any setup:
 - **Machine Learning:** `scikit-learn`, `xgboost`
 
 # Data
-The dataset is a crucial part of this project. It combines clinical, genetic, environmental, and lifestyle features to predict diabetes subtypes.
+The dataset is a crucial part of this project. It Companies and job seekers often face challenges understanding the job market dynamics—such as what skills are in demand, typical salary ranges, or trends in remote work. Using job listing data, this project aims to analyze these trends and predict key job attributes such as salary or seniority level based on job requirements and company details.
 
 I structure this as follows - 
 
 ## Source Data
-**Description:** Contains 70,000 patient samples with 34 features including genetic markers, autoantibodies, family history, environmental factors, lifestyle attributes, and clinical measures.
+**Author:** Sidraazam
 
-**Target Feature:** Diabetes_Subtype with 13 classes:
-0: Steroid-Induced Diabetes
-1: Neonatal Diabetes Mellitus (NDM)
-2: Prediabetic
-3: Type 1 Diabetes
-4: Wolfram Syndrome
-5: LADA
-6: Type 2 Diabetes
-7: Wolcott-Rallison Syndrome
-8: Secondary Diabetes
-9: Type 3c Diabetes
-10: Gestational Diabetes
-11: Cystic Fibrosis‑Related Diabetes (CFRD)
-12: MODY
+**Source:** Kaggle (on Kaggle) — dataset titled “Data Science Roles, Skills & Salaries 2025”. 
 
-## Data Acquisition
-- Data can be downloaded directly from the repository or other open-source sources.
+**Timeline:** September 2025
 
-- In some cases, data may be collected via API calls or web scraping (elaborate if applicable).
+**Shape:** 944 rows × 13 columns. According to one source, the table has 13 columns.
+**Target Feature:** Salary
 
-- Ensure all license restrictions and credits are properly followed.
 ## Data Preprocessing
 To make the dataset suitable for modeling:
 
-1.Checked for missing values → none found
+1.Checked for missing values → Founded
 
-2.Verified duplicate rows → none found
+2.Verified duplicate rows → Founded
 
 3.Removed outliers using IQR method
 
@@ -95,46 +80,28 @@ To make the dataset suitable for modeling:
 
 
 #### 📊 Dataset
-- **Rows × Columns:** Rows × Columns: 70,000 × 34
+- **Rows × Columns:** Rows × Columns: 944 x 13
 
-- **Features include:** genetic markers, autoantibodies, family history, environmental factors, lifestyle attributes, clinical measures
+- **Features include:** | Job Title | Seniority Level | Work Status | Company Size | Skills | Posting Date | Industry Type |
 
 - **No missing values or duplicates**
 
 #### 🤖 Model Building
 #### 🧩 Algorithms Used
 
-The following machine learning algorithms were implemented and compared to identify the best-performing model for multiclass diabetes subtype prediction:
+The following machine learning algorithms were implemented and compared to identify the best-performing model for multiclass predicts the salary category 
 
-- Random Forest Classifier 🌲
+- Random Forest Regressor – tree-based ensemble model.
 
-- Logistic Regression 📈
+- XGBoost Regressor – gradient boosting model.
 
-- Naive Bayes Classifier 🧮
+- SVR (Support Vector Regression) – kernel-based regression.
 
-- Decision Tree Classifier 🌳
-
-- Gradient Boosting Classifier 🚀
-
-- Support Vector Machine (SVM) ⚙️
-
-- K-Nearest Neighbors (KNN) 👥
-
+- kNN Regressor – distance-based regression.
 #### 🎯 Model Tuning
 
-**Hyperparameter Optimization:** Conducted using RandomizedSearchCV (3-fold cross-validation)
+**Hyperparameter Optimization:** Conducted using GridSearchCV (3-fold cross-validation)
 
-**Parameters fine-tuned include:**
-
-- Number of estimators
-
-- Maximum depth
-
-- Learning rate (for boosting models)
-
-- Regularization parameters
-
-- Kernel type and C value (for SVM)
 
 #### 🧠 Model Evaluation Metrics
 
@@ -153,7 +120,7 @@ Each model was evaluated using multiple metrics to ensure balanced performance a
 
 #### After comprehensive evaluation:
 
-#### Best Performing Model: 🏅 Random Forest Classifier
+#### Best Performing Model: 🏅 Random Forest Regression
 
 #### Reason for Selection:
 
@@ -168,84 +135,92 @@ Each model was evaluated using multiple metrics to ensure balanced performance a
 #### 📈 Sample Prediction
 #### Sample Input
 
-| Feature              | Value |
-| -------------------- | ----- |
-| Age                  | 45    |
-| Blood Pressure       | 130   |
-| Blood Glucose Levels | 210   |
-| BMI                  | 29.3  |
-| Genetic Marker 1     | 1     |
-| Family History       | Yes   |
-| Physical Activity    | Low   |
-| Diet Score           | 6     |
+
+
+| Job Title                 | Seniority Level | Work Status | Company Size | Skills                  | Posting Date | Industry Type |
+| ------------------------- | --------------- | ----------- | ------------ | ----------------------- | ------------ | ------------- |
+| Data Scientist            | Senior          | Remote      | 500-1000     | Python, SQL, AWS        | 2024-09-15   | Tech          |
+| Machine Learning Engineer | Mid             | On-site     | 1000-5000    | Python, TensorFlow, GCP | 2024-08-20   | Finance       |
+| Data Analyst              | Entry           | Hybrid      | 50-200       | Excel, SQL, Tableau     | 2024-10-01   | Retail        |
 
 #### Sample Output
+| Job Title                 | Predicted Salary  |
+| ------------------------- | -------------------- |
+| Data Scientist            | High                 |
+| Machine Learning Engineer | High                 |
+| Data Analyst              | Medium               |
 
-| Diabetes Subtype         | Probability |
-| ------------------------ | ----------- |
-| Prediabetes              | 0.65        |
-| Type 1 Diabetes          | 0.15        |
-| Steroid-Induced Diabetes | 0.05        |
-| Wolfram Syndrome         | 0.02        |
-| NDM                      | 0.13        |
 
-#### Predicted Subtype: Prediabetes
-
-**Top Contributing Features:** Genetic Marker 1, BMI, Diet Score
 
 ## Final Conclusion
 
-1.A comprehensive machine learning pipeline was developed to predict diabetes subtypes using clinical, genetic, environmental, and lifestyle factors.
+1. A comprehensive machine learning pipeline was developed to predict the salary with including features.
 
-2.Multiple models were trained and evaluated: Random Forest, Logistic Regression, Naive Bayes, Decision Tree, Gradient Boosting, SVM, and KNN.
+2. Multiple models were trained and evaluated: Random,XGboost,SVM,KNN
 
-3.Random Forest emerged as the best-performing model, achieving 92% accuracy and high performance across Precision, Recall, F1-Score, and AUC-ROC metrics.
+3. Random Forest emerged as the best-performing model, achieving 92% accuracy and high performance across Precision, Recall, F1-Score, and AUC-ROC metrics.
 
-4.Key predictive features include: BMI, Blood Glucose Levels, Genetic Marker 1, Diet Score, Insulin Levels, and Family History.
+4. The dataset confirms that in 2025, data science roles continue to offer strong compensation, driven by seniority, in‑demand skills (e.g., Python, AWS, ML), and industry/organization profile. Industry data shows mid‑level data scientists in India now earn around ₹12 LPA and above. 
 
-5.The model effectively captures complex interactions between genetic, lifestyle, and clinical factors, providing interpretable insights for diabetes subtype prediction.
+5. Globally, experienced data scientists are reaching salaries of USD 150 K or more.
+  
+6. Therefore, for job‑seekers in data science: accumulating relevant skills, targeting senior roles, and aligning with strong companies/locations remain key strategies for  maximising compensation
 
-6.This project demonstrates the potential of machine learning in healthcare analytics for early detection, personalized risk assessment, and targeted interventions.
+7. This project demonstrates the potential of machine learning in healthcare analytics for early detection, personalized risk assessment, and targeted interventions.
 
-7.Future work can include deep learning models, ensemble methods, explainable AI (SHAP/LIME), and deployment as a web/mobile application.
+8. Future work can include deep learning models, ensemble methods, explainable AI (SHAP/LIME), and deployment as a web/mobile application.
 
 # 🚀 Future Enhancements
 Outline potential future work that can be done to extend the project or improve its functionality. This will help others understand the scope of your project and identify areas where they can contribute.
-**1.Hyperparameter Optimization:** Use finer GridSearch or Bayesian optimization.
 
-**2.Feature Engineering:** Add derived features, feature selection, or PCA.
+**1.Hyperparameter Optimization:** Use Bayesian optimization or RandomizedSearchCV for more efficient tuning.
 
-**3.Class Imbalance Handling:** Use SMOTE or class weighting.
+**Cross-Validation Improvements:**
 
-**4.Ensemble Learning:** Explore stacking or boosting (XGBoost, LightGBM).
+- Implement stratified or repeated cross-validation for more robust evaluation.
 
-**5.Data Expansion:** Incorporate additional genetic/environmental/lifestyle factors.
+**2.Feature Engineering:** Add derived features, feature selection 
+- Create new features or combine existing ones to better capture relationships.
 
-**6.Deployment & Monitoring:** Real-time prediction pipeline with continuous monitoring and retraining.
+- Explore interaction terms or polynomial features.
+
+**3.Data Augmentation & Cleaning:**
+- Collect more data to improve model generalization.
+
+- Handle outliers or skewed distributions more effectively.
+
+**4.Advanced Models::**
+- Test other ensemble models like LightGBM or CatBoost.
+
+- Explore deep learning models if dataset size permits.
+
 
 # Model Optimization
 
-**1.Address Class Imbalance**
+**Hyperparameter Tuning:**
 
-- Apply SMOTE, class weighting, or targeted oversampling/undersampling to improve predictions for underrepresented classes.
+- Fine-tune parameters such as n_estimators, max_depth, learning_rate, and min_samples_split.
 
-**2.Ensemble Techniques**
+**Regularization**
 
-- Combine your trained models (Random Forest, Logistic Regression, Naive Bayes) using stacking to leverage complementary strengths.
+- Apply techniques like L1/L2 regularization for linear models to reduce overfitting.
 
-- Explore boosting models like XGBoost, LightGBM, or CatBoost for higher predictive performance.
+**Feature Selection:**
 
-**3.Cross-Validation Enhancements**
+- Remove irrelevant or highly correlated features to improve accuracy and reduce computation.
 
-- Use stratified k-fold cross-validation to ensure consistent performance across all classes.
+**Ensemble Techniques:**
 
-- Monitor metrics per fold to detect potential overfitting
+- Combine multiple models using stacking or blending for better predictions.
+
+**Scaling and Normalization:**
+
+- Standardize features for distance-based models like kNN or SVR.
 
 # Acknowledgments/References
 Acknowledge any contributors, data sources, or other relevant parties who have contributed to the project. This is an excellent way to show your appreciation for those who have helped you along the way.
-- Dataset inspired by open-source health data repositories
 
-- Image credits: rashadashurov @ VectorStock
+- Dataset inspired by open-source health data repositories
 
 - README template adapted from Pragyy’s Data Science Readme Template
 
